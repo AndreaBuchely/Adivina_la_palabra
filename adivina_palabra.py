@@ -42,4 +42,20 @@ letra_a_validar.lower()
 letra_a_validar.strip()
 validacion_dato(letra_a_validar)
 
+def buscarla_en_palabra (letra_a_validar):
+    if letra_a_validar in palabra_elegida:
+       letras_correctas.append(letra_a_validar)
+    else:
+       letras_incorrectas.append(letra_a_validar)
+         
+buscarla_en_palabra(letra_a_validar)
+print(f'LETRAS INCORRECTAS:{letras_incorrectas}')
+print(f'LETRAS CORRECTAS:{letras_correctas}')
+
+
+
+
+    
+
+
 
