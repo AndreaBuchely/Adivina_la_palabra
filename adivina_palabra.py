@@ -3,10 +3,10 @@ print("Tu objetivo es adivinar la palabra oculta, para lo cual tienes 8 intentos
 
 from random import choice
 
-palabras = ["bosnia", "brasil", "tambien", "oculta", "precio"]
+palabras = ["antebrazos", "asteroides", "brillantes", "bronceador", "aerolineas"]
 letras_incorrectas = []
 letras_correctas = []
-intentos = 8
+intentos = 3
 aciertos = 0
 juego_terminado = False
 lista_oculta = []
@@ -53,11 +53,12 @@ palabra_elegida = elegir_palabra(palabras)
 
 mostrar_nuevo_tablero(palabra_elegida)
 
-while intentos > 0:
+while intentos >= 0:
   letra_a_validar = input("Ingrese una letra: ")
   letra_a_validar.lower()
   letra_a_validar.strip()
   buscarla_en_palabra(letra_a_validar)
+
   if letra_a_validar in palabra_elegida:
         aciertos +=1
         reemplazar_valor(letra_a_validar)
@@ -65,8 +66,14 @@ while intentos > 0:
         intentos -=1
   print(f'LETRAS INCORRECTAS:{letras_incorrectas}')
   print(f'LETRAS CORRECTAS:{letras_correctas}')
+  
+  if intentos <= 3:
+    print(f'Este tu intento #',{intentos})
 
-  break
+print("Fin del juego")  
+         
+
+  
 
 
 
